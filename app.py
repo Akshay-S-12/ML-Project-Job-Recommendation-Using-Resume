@@ -6,10 +6,10 @@ import pickle
 app = Flask(__name__)
 
 # Load models===========================================================================================================
-rf_classifier_categorization = pickle.load(open('models/rf_classifier_categorization.pkl', 'rb'))
-tfidf_vectorizer_categorization = pickle.load(open('models/tfidf_vectorizer_categorization.pkl', 'rb'))
-rf_classifier_job_recommendation = pickle.load(open('models/rf_classifier_job_recommendation.pkl', 'rb'))
-tfidf_vectorizer_job_recommendation = pickle.load(open('models/tfidf_vectorizer_job_recommendation.pkl', 'rb'))
+rf_classifier_categorization = pickle.load(open('Resume-Screening-with-Machine-Learning-Job-Recommendations-Parsing-Categorization/rf_classifier_categorization.pkl', 'rb'))
+tfidf_vectorizer_categorization = pickle.load(open('Resume-Screening-with-Machine-Learning-Job-Recommendations-Parsing-Categorization/tfidf_vectorizer_categorization.pkl', 'rb'))
+rf_classifier_job_recommendation = pickle.load(open('Resume-Screening-with-Machine-Learning-Job-Recommendations-Parsing-Categorization/rf_classifier_job_recommendation.pkl', 'rb'))
+tfidf_vectorizer_job_recommendation = pickle.load(open('Resume-Screening-with-Machine-Learning-Job-Recommendations-Parsing-Categorization/tfidf_vectorizer_job_recommendation.pkl', 'rb'))
 
 # Clean resume==========================================================================================================
 def cleanResume(txt):
