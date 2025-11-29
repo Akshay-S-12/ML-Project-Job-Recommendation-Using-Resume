@@ -6,7 +6,7 @@ Education:
 - Certified Financial Analyst (CFA) Level I Candidate
 
 Skills:
-- Proficient in financial modeling and analysis using Excel, Bloomberg Terminal, and other financial software
+- Proficient in  financial modeling and analysis using Excel, Bloomberg Terminal, and other financial software
 - Extensive knowledge of banking products and services, including loans, mortgages, and investment products
 - Strong understanding of regulatory compliance and risk management practices in the banking industry
 - Excellent communication and interpersonal skills, with a focus on building rapport with clients and colleagues

@@ -6,20 +6,20 @@ import pickle
 app = Flask(__name__)
 
 # Load models===========================================================================================================
-rf_classifier_categorization = pickle.load(open('Resume-Screening-with-Machine-Learning-Job-Recommendations-Parsing-Categorization/rf_classifier_categorization.pkl', 'rb'))
-tfidf_vectorizer_categorization = pickle.load(open('Resume-Screening-with-Machine-Learning-Job-Recommendations-Parsing-Categorization/tfidf_vectorizer_categorization.pkl', 'rb'))
-rf_classifier_job_recommendation = pickle.load(open('Resume-Screening-with-Machine-Learning-Job-Recommendations-Parsing-Categorization/rf_classifier_job_recommendation.pkl', 'rb'))
-tfidf_vectorizer_job_recommendation = pickle.load(open('Resume-Screening-with-Machine-Learning-Job-Recommendations-Parsing-Categorization/tfidf_vectorizer_job_recommendation.pkl', 'rb'))
+rf_classifier_categorization = pickle.load(open('rf_classifier_categorization.pkl', 'rb'))
+tfidf_vectorizer_categorization = pickle.load(open('tfidf_vectorizer_categorization.pkl', 'rb'))
+rf_classifier_job_recommendation = pickle.load(open('rf_classifier_job_recommendation.pkl', 'rb'))
+tfidf_vectorizer_job_recommendation = pickle.load(open('tfidf_vectorizer_job_recommendation.pkl', 'rb'))
 
 # Clean resume==========================================================================================================
 def cleanResume(txt):
-    cleanText = re.sub('http\S+\s', ' ', txt)
-    cleanText = re.sub('RT|cc', ' ', cleanText)
-    cleanText = re.sub('#\S+\s', ' ', cleanText)
-    cleanText = re.sub('@\S+', '  ', cleanText)
-    cleanText = re.sub('[%s]' % re.escape("""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""), ' ', cleanText)
+    cleanText = re.sub(r'http\S+\s', ' ', txt)
+    cleanText = re.sub(r'RT|cc', ' ', cleanText)
+    cleanText = re.sub(r'#\S+\s', ' ', cleanText)
+    cleanText = re.sub(r'@\S+', '  ', cleanText)
+    cleanText = re.sub(r'[%s]' % re.escape("""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""), ' ', cleanText)
     cleanText = re.sub(r'[^\x00-\x7f]', ' ', cleanText)
-    cleanText = re.sub('\s+', ' ', cleanText)
+    cleanText = re.sub(r'\s+', ' ', cleanText)
     return cleanText
 
 # Prediction and Category Name
